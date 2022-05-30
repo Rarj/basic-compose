@@ -15,6 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.arj.practicecomposebasic.article.ArticleActivity
+import dev.arj.practicecomposebasic.taskmanager.TaskManagerActivity
 import dev.arj.practicecomposebasic.ui.theme.PracticeComposeBasicTheme
 
 class MainActivity : ComponentActivity() {
@@ -45,7 +46,9 @@ fun Navigation() {
         Button(text = "Compose Article") {
             context.startActivity(Intent(context, ArticleActivity::class.java))
         }
-        Button(text = "Task Manager") {}
+        Button(text = "Task Manager") {
+            context.startActivity(Intent(context, TaskManagerActivity::class.java))
+        }
         Button(text = "Compose Quadrant") {}
     }
 }

@@ -62,7 +62,7 @@ fun TaskCompleteCompose() {
 
 @Preview(showBackground = true)
 @Composable
-fun TaskManagerPreviewa() {
+fun TaskManagerPreview() {
     PracticeComposeBasicTheme {
         TaskCompleteCompose()
     }

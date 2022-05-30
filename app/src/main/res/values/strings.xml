@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Practice Compose Basic</string>
+    <string name="title_activity_article">ArticleActivity</string>
 </resources>

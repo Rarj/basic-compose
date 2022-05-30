@@ -1,5 +1,6 @@
 package dev.arj.practicecomposebasic
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,8 +11,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import dev.arj.practicecomposebasic.article.ArticleActivity
 import dev.arj.practicecomposebasic.ui.theme.PracticeComposeBasicTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,6 +35,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Navigation() {
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -39,7 +43,7 @@ fun Navigation() {
             .padding(20.dp)
     ) {
         Button(text = "Compose Article") {
-
+            context.startActivity(Intent(context, ArticleActivity::class.java))
         }
         Button(text = "Task Manager") {}
         Button(text = "Compose Quadrant") {}

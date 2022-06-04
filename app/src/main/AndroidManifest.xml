@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PracticeComposeBasic">
         <activity
+            android:name=".quadrant.QuadrantActivity"
+            android:exported="false"
+            android:label="@string/title_activity_quadrant" />
+        <activity
             android:name=".taskmanager.TaskManagerActivity"
             android:exported="false"
             android:label="@string/title_activity_task_manager" />

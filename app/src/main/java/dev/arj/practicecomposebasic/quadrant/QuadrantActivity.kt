@@ -35,6 +35,29 @@ class QuadrantActivity : ComponentActivity() {
 }
 
 @Composable
+fun ContentQuadrantCompose(
+    modifier: Modifier,
+    title: String,
+    subtitle: String,
+) {
+    Column(
+        modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+    ) {
+        Text(
+            text = title,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
+        Text(
+            text = subtitle,
+            textAlign = TextAlign.Justify
+        )
+    }
+}
+
+@Composable
 fun QuadrantCompose() {
     Column(
         modifier = Modifier
@@ -45,44 +68,26 @@ fun QuadrantCompose() {
                 .fillMaxSize()
                 .weight(1f, true)
         ) {
-            Column(
+            ContentQuadrantCompose(
                 modifier = Modifier
                     .fillMaxSize()
                     .weight(1f, true)
                     .background(Color.Green)
                     .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Text(
-                    text = "Text Composable",
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(bottom = 16.dp)
-                )
-                Text(
-                    text = "Displays text and follows Material Design guidelines.",
-                    textAlign = TextAlign.Justify
-                )
-            }
-            Column(
+                title = "Text Composable",
+                subtitle = "Displays text and follows Material Design guidelines."
+            )
+
+            ContentQuadrantCompose(
                 modifier = Modifier
                     .fillMaxSize()
                     .weight(1f, true)
                     .background(Color.Yellow)
                     .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Text(
-                    text = "Image composable",
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(bottom = 16.dp)
-                )
-                Text(
-                    text = "Creates a composable that lays out and draws a given Painter class object.",
-                    textAlign = TextAlign.Justify
-                )
-            }
+                title = "Image composable",
+                subtitle = "Creates a composable that lays out and draws a given Painter class object."
+            )
+
         }
 
         Row(
@@ -90,43 +95,25 @@ fun QuadrantCompose() {
                 .fillMaxSize()
                 .weight(1f, true)
         ) {
-            Column(
+            ContentQuadrantCompose(
                 modifier = Modifier
                     .fillMaxSize()
                     .weight(1f, true)
                     .background(Color.Cyan)
                     .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Text(
-                    text = "Row composable",
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(bottom = 16.dp)
-                )
-                Text(
-                    text = "A layout composable that places its children in a horizontal sequence.",
-                    textAlign = TextAlign.Justify
-                )
-            }
-            Column(
+                title = "Row composable",
+                subtitle = "A layout composable that places its children in a horizontal sequence."
+            )
+
+            ContentQuadrantCompose(
                 modifier = Modifier
                     .fillMaxSize()
                     .weight(1f, true)
                     .background(Color.LightGray)
                     .padding(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Text(
-                    text = "Column composable",
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "A layout composable that places its children in a vertical sequence.",
-                    textAlign = TextAlign.Justify
-                )
-            }
+                title = "Column composable",
+                subtitle = "A layout composable that places its children in a vertical sequence."
+            )
         }
 
     }

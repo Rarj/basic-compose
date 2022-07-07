@@ -1,15 +1,18 @@
-package dev.arj.businesscardcompose
+package dev.arj.businesscardcompose.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.tooling.preview.Preview
+import dev.arj.businesscardcompose.ui.theme.Background
 import dev.arj.businesscardcompose.ui.theme.BusinessCardComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,27 +20,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             BusinessCardComposeTheme {
-                // A surface container using the 'background' color from the theme
+                window.statusBarColor = Background.toArgb()
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .fillMaxWidth(),
                     color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+                ) { BackgroundBusinessCard() }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun BusinessCardPreview() {
     BusinessCardComposeTheme {
-        Greeting("Android")
+        BackgroundBusinessCard()
     }
 }
